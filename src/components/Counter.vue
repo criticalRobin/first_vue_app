@@ -11,10 +11,14 @@
 export default {
   props: {
     name: String,
+    start: {
+      typeof: Number,
+      default: 0,
+    },
   },
   data() {
     return {
-      counter: 5,
+      counter: this.start,
     };
   },
   // similares a methods, pero computed se quedan en la cache
