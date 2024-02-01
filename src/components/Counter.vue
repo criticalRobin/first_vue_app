@@ -1,5 +1,5 @@
 <template>
-  <h2>Counter</h2>
+  <h2>{{ customName }}</h2>
   <p>{{ counter }} <sup>2</sup> = {{ getSquareValue }}</p>
   <div class="buttons">
     <button @click="increment()">+1</button>
@@ -9,7 +9,9 @@
 
 <script>
 export default {
-  name: "Counter",
+  props: {
+    name: String,
+  },
   data() {
     return {
       counter: 5,
@@ -19,6 +21,11 @@ export default {
   computed: {
     getSquareValue() {
       return Math.pow(this.counter, 2);
+    },
+    customName() {
+      return this.name === null || this.name === undefined
+        ? "Contador"
+        : this.name;
     },
   },
   methods: {

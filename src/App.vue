@@ -1,5 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
+  <Counter name="Entraron" />
   <Counter />
 </template>
 
