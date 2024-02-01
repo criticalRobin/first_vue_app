@@ -15,6 +15,9 @@ export default {
       typeof: Number,
       default: 0,
     },
+    validator(value) {
+      return value >= 0;
+    },
   },
   data() {
     return {
