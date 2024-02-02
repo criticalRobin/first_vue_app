@@ -1,16 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Counter name="Entraron" :start="1" />
-  <Counter name="Salieron" :start="0" />
+  <Indecision></Indecision>
 </template>
 
 <script>
-import Counter from "./components/Counter.vue";
+import Indecision from "./components/Indecision.vue";
 
 export default {
   name: "App",
   components: {
-    Counter,
+    Indecision,
   },
 };
 </script>
