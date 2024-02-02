@@ -2,18 +2,30 @@
   <img src="https://via.placeholder.com/250" alt="hobis ño se cargo" />
   <div class="bg-dark"></div>
   <div class="indecision-container">
-    <input type="text" placeholder="Hazme una pregunta" />
+    <input type="text" placeholder="Hazme una pregunta" v-model="question" />
     <p>No olvides finalizar con un (?)</p>
 
     <div>
-      <h2>Seré millonario?</h2>
+      <h2>{{ question }}</h2>
       <h1>Si, No, Pensado</h1>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      question: "",
+    };
+  },
+  watch: {
+    question(newValue) {
+      if (!newValue.includes("?")) return;
+      console.log("Pregunta finalizada");
+    },
+  },
+};
 </script>
 
 <style scoped>
