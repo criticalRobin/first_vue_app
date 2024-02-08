@@ -1,6 +1,7 @@
 <template>
   <h2>{{ customName }}</h2>
   <p>{{ counter }} <sup>2</sup> = {{ getSquareValue }}</p>
+  <p data-testid="counter">{{ counter }}</p>
   <div class="buttons">
     <button @click="increment()">+1</button>
     <button @click="decrement()">-1</button>

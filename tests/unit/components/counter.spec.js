@@ -26,4 +26,13 @@ describe("Pruebas del Componente Counter", () => {
 
     expect(h2Values).toBe("Contador");
   });
+
+  test("El valor del segundo tag p debe ser igual a 0", () => {
+    const wrapper = shallowMount(Counter);
+
+    // const pTags = wrapper.findAll("p");
+    const value = wrapper.find('[data-testid="counter"]').text();
+
+    expect(value).toBe("0");
+  });
 });
