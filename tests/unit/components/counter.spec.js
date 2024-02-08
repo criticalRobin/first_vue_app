@@ -60,4 +60,18 @@ describe("Pruebas del Componente Counter", () => {
 
     expect(Number(value)).toBe(start);
   });
+
+  test("EL title debe tener el texto que envie por la prop title", () => {
+    const name = "Hola Mundo!!!";
+
+    const wrapper = shallowMount(Counter, {
+      props: {
+        name,
+      },
+    });
+
+    const nameValue = wrapper.find("h2").text();
+
+    expect(nameValue).toBe(name);
+  });
 });
