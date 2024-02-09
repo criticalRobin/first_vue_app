@@ -42,7 +42,7 @@ export default {
   watch: {
     question(newValue) {
       this.isValidQuestion = false;
-      consolo.log(newValue);
+      console.log({ newValue });
       if (!newValue.includes("?")) return;
       this.isValidQuestion = true;
       this.getAnswer();
