@@ -24,18 +24,22 @@ export default {
   },
   methods: {
     async getAnswer() {
-      this.answer = "Pensando...";
-      const { answer, image } = await fetch("https://yesno.wtf/api").then((r) =>
-        r.json()
-      );
-      this.image = image;
+      try {
+        this.answer = "Pensando...";
+        const { answer, image } = await fetch("https://yesno.wtf/api").then(
+          (r) => r.json()
+        );
+        this.image = image;
 
-      if (answer === "yes") {
-        this.answer = "Sí";
-      } else if (answer === "no") {
-        this.answer = "No";
-      } else {
-        this.answer = "Tal vez!!!!";
+        if (answer === "yes") {
+          this.answer = "Sí";
+        } else if (answer === "no") {
+          this.answer = "No";
+        } else {
+          this.answer = "Tal vez!!!!";
+        }
+      } catch (error) {
+        console.error(error);
       }
     },
   },
