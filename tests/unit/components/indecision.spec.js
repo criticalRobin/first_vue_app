@@ -51,11 +51,18 @@ describe("Pruebas del componente Indecision", () => {
 
     const image = wrapper.find("img");
 
-    console.log(image.html());
-
     expect(image.exists()).toBeTruthy();
     expect(wrapper.vm.answer).toBe("Sí");
   });
 
-  test("Pruebas en el getAnswer - Fallo del API", () => {});
+  test("Pruebas en el getAnswer - Fallo del API", async () => {
+    fetch.mockImplementationOnce(() => Promise.reject());
+
+    await wrapper.vm.getAnswer();
+
+    const image = wrapper.find("img");
+
+    expect(image.exists()).toBeFalsy();
+    expect(wrapper.vm.answer).toBe("Error al obtener la respuesta");
+  });
 });

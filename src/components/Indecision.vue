@@ -39,7 +39,9 @@ export default {
           this.answer = "Tal vez!!!!";
         }
       } catch (error) {
-        console.error(error);
+        console.log(`Indecision Component: ${error}`);
+        this.answer = "Error al obtener la respuesta";
+        this.image = null;
       }
     },
   },
